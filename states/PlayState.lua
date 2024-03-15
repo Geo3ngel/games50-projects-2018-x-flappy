@@ -108,7 +108,6 @@ function PlayState:update(dt)
         })
     end
 
-    -- TODO: Pause on P pressed in this game state!
     if love.keyboard.wasPressed('p') then
         gStateMachine:change('pause')
     end

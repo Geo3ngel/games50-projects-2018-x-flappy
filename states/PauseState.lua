@@ -9,7 +9,6 @@
 PauseState = Class{__includes = BaseState}
 
 function PauseState:init()
-    self.paused = true
     self.image = love.graphics.newImage("pause.png")
 end
 
@@ -18,12 +17,9 @@ function PauseState:enter()
     sounds['pause']:play()
     -- Pause Music
     sounds['music']:pause()
-    
-    -- pause delta time?
 end
 
 function PauseState:exit()
-    -- Undo freeze on delta time?
     sounds['pause']:play()
     -- Resume Music
     sounds['music']:play()
@@ -33,7 +29,7 @@ function PauseState:update(dt)
     -- Unpause if p is pressed again!
     if love.keyboard.wasPressed('p') then
         -- TODO: FIX BUG where the game resets by doing this!
-        gStateMachine:change('play')
+        gStateMachine:resumeCached()
     end
 end
 

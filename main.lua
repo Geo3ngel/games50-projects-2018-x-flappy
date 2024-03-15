@@ -131,11 +131,6 @@ function love.keypressed(key)
     if key == 'escape' then
         love.event.quit()
     end
-
-    if key == 'p' then
-        -- TODO: Set state to paused?
-        -- TODO: Try using love.keyboard.keysPressed['p'] to see if we need to unpause or not yet?
-    end
 end
 
 --[[
