@@ -10,6 +10,12 @@
 
 ScoreState = Class{__includes = BaseState}
 
+function ScoreState:init()
+    self.gold = love.graphics.newImage("gold.png")
+    self.silver = love.graphics.newImage("silver.png")
+    self.bronze = love.graphics.newImage("bronze.png")
+end
+
 --[[
     When we enter the score state, we expect to receive the score
     from the play state so we know what to render to the State.
@@ -25,6 +31,16 @@ function ScoreState:update(dt)
     end
 end
 
+function ScoreState:selectTrophy()
+    if self.score > 4 then
+        return self.gold
+    end
+    if self.score > 2 then
+        return self.silver
+    end
+    return self.bronze
+end
+
 function ScoreState:render()
     -- simply render the score to the middle of the screen
     love.graphics.setFont(flappyFont)
@@ -33,5 +49,11 @@ function ScoreState:render()
     love.graphics.setFont(mediumFont)
     love.graphics.printf('Score: ' .. tostring(self.score), 0, 100, VIRTUAL_WIDTH, 'center')
 
-    love.graphics.printf('Press Enter to Play Again!', 0, 160, VIRTUAL_WIDTH, 'center')
+    local trophy = self.selectTrophy(self)
+    love.graphics.push()
+    love.graphics.scale(0.05,0.05)
+    love.graphics.draw(trophy, (VIRTUAL_WIDTH)*9, 2500)
+    love.graphics.pop()
+
+    love.graphics.printf('Press Enter to Play Again!', 0, 180, VIRTUAL_WIDTH, 'center')
 end

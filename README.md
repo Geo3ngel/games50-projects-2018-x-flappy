@@ -12,3 +12,8 @@
 I'll probably do the score state modification last.
 
 The pause feature likely requires me to create my own "State", extending BaseState like the others.
+
+# Scores required for trophies:
+At least 0 => Bronze
+At least 3 =>  Silver
+At least 5 => Gold
