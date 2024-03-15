@@ -89,7 +89,7 @@ function love.load()
 
         -- https://freesound.org/people/xsgianni/sounds/388079/
         ['music'] = love.audio.newSource('marios_way.mp3', 'static'),
-        ['pause'] = love.audio.newSource('pause.wav', 'static')
+        ['pause'] = love.audio.newSource('pause.mp3', 'static')
     }
 
     -- kick off music
