@@ -15,5 +15,5 @@ The pause feature likely requires me to create my own "State", extending BaseSta
 
 # Scores required for trophies:
 At least 0 => Bronze
-At least 3 =>  Silver
-At least 5 => Gold
+At least 2 =>  Silver
+At least 3 => Gold

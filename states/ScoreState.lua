@@ -32,10 +32,10 @@ function ScoreState:update(dt)
 end
 
 function ScoreState:selectTrophy()
-    if self.score > 4 then
+    if self.score > 2 then
         return self.gold
     end
-    if self.score > 2 then
+    if self.score > 1 then
         return self.silver
     end
     return self.bronze

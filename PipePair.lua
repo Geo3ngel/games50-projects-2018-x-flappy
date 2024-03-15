@@ -9,7 +9,7 @@
 ]]
 
 -- bounds for potential size of the gap between pipes
-PIPE_SIZE_LOWER_BOUND = 90
+PIPE_SIZE_LOWER_BOUND = 100
 PIPE_SIZE_UPPER_BOUND = 175
 
 PipePair = Class{}
